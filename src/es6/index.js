@@ -39,9 +39,9 @@ let person = {
   country: "VE",
 };
 
-let { name, age, country } = person;
+let { name1, age2, country3 } = person;
 
-console.log(name, age, country);
+console.log(name1, age2, country3);
 
 //Spread Operator
 let team1 = ["Cristina", "Rafael", "Juan"];
@@ -86,61 +86,60 @@ let listOfNames = names.map(function (item) {
 let listOfNames2 = names.map((item) => console.log(item.name));
 
 const listOfNames3 = (name, age, country) => {
-    ...
+  console.log(name, age, country);
 };
 
-const listOfNames4 = name => {
-    ...
-}
+const listOfNames4 = (name) => {
+  console.log(name, age, country);
+};
 
-const square = num => num * num;
+const square = (num) => num * num;
 
 //Promises(algo va a pasar) and Asynchrony
 const helloPromise = () => {
-    return new Promise((resolve, reject)=>{
-        if(true){
-            resolve("Hello");
-        }else{
-            reject("Ups");
-        }
-    })
-}
+  return new Promise((resolve, reject) => {
+    if (true) {
+      resolve("Hello");
+    } else {
+      reject("Ups");
+    }
+  });
+};
 
 helloPromise()
-    .then(response => console.log(response))
-    .then(() => console.log('Hola'))
-    .catch(error => console.log(error));
-
+  .then((response) => console.log(response))
+  .then(() => console.log("Hola"))
+  .catch((error) => console.log(error));
 
 //Clases
 class calculator {
-    constructor() {
-        this.valueA = 0;
-        this. valueB = 0;
-    }
-    sum(valueA, valueB){
-        this.valueA = valueA;
-        this.valueB = valueB;
-        return this.valueA + this.valueB;
-    }
+  constructor() {
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+  sum(valueA, valueB) {
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+  }
 }
 
 const calc = new calculator();
-console.log(calc.sum(2,2));
+console.log(calc.sum(2, 2));
 
 //Import y Export de ES6
-import  hello  from './module.js';
+import hello from "./module.js";
 
 console.log(hello());
 
 //Generators
-function* helloWorld(){
-    if(true){
-        yield 'Hello, ';
-    }
-    if(true){
-        yield 'World';
-    }
+function* helloWorld() {
+  if (true) {
+    yield "Hello, ";
+  }
+  if (true) {
+    yield "World";
+  }
 }
 
 const generatorHello = helloWorld();
